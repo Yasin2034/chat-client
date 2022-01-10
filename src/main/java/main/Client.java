@@ -20,6 +20,7 @@ public class Client extends Thread {
     private String username;
     private String password;
     private String messages = "";
+    private boolean isOnChat = false;
 
     @Override
     public void run() {
@@ -46,13 +47,8 @@ public class Client extends Thread {
                         JsonObject jsonObject = Json.createReader(reader).readObject();
                         String code = jsonObject.getString("code");
                         if(Codes.CHAT_REQUEST.equalsIgnoreCase(code)){
-                            if(Objects.nonNull(Main.peerRequest)){
-                                sender.println( JsonUtil.convertCodeToJson(Codes.BUSY));
-                                try {
-                                    socket.close();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
+                            if(Objects.nonNull(Main.peerRequest) || isOnChat){
+                                sender.println(JsonUtil.convertCodeToJson(Codes.BUSY));
                             }else{
                                 openConfirmScreen(textPane,socket,reader,sender);
                             }
@@ -83,6 +79,7 @@ public class Client extends Thread {
             f.setVisible(false);
             Main.frame.setVisible(false);
             openChatScreen(textPane,sender);
+            isOnChat = true;
         });
         f.add(yes);
 

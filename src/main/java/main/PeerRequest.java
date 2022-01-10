@@ -40,13 +40,13 @@ public class PeerRequest extends Thread{
                 JsonObject jsonObject = Json.createReader(reader).readObject();
                 String code = jsonObject.getString("code");
 
-                if(Objects.nonNull(Main.peerRequest)){
-                    sender.println( JsonUtil.convertCodeToJson(Codes.BUSY));
-                    socket.close();
+                if(Codes.BUSY.equalsIgnoreCase(code)){
+                    JOptionPane.showMessageDialog(null, "User is busy");
                 }if(Codes.REJECT.equalsIgnoreCase(code)){
                     JOptionPane.showMessageDialog(null, "Request Rejected");
                     socket.close();
                 }else if (Codes.OK.equalsIgnoreCase(code)){
+                    client.setOnChat(true);
                     Main.frame.setVisible(false);
                     openChatScreen(textPane);
                 }else if(Codes.MESSAGE.equalsIgnoreCase(code)){

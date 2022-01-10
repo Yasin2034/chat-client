@@ -1,8 +1,8 @@
-{"code":"LOGIN","username":"a","password":"1","port":"54468"}
+{"code":"LOGIN","username":"c","password":"1","port":"48147"}
 
-{"code":"HELLO","username":"a","message":"a"}
+{"code":"HELLO","username":"c","message":"c"}
 {"code":"SEARCH_USER","username":"a"}
-{"code":"CHAT_REQUEST","username":"a"}
-{"code":"OK","username":"a"}
-{"code":"MESSAGE","username":"a","message":"asd"}
-{"code":"MESSAGE","username":"a","message":"asddsaasd"}
+{"code":"CHAT_REQUEST","username":"c"}
+{"code":"SEARCH_USER","username":"c"}
+{"code":"CHAT_REQUEST","username":"c"}
+{"code":"OK","username":"c"}
