@@ -17,6 +17,12 @@ public class JsonUtil {
                 .add("username", Main.client.getUsername())
                 .add("message", message)
                 .build());
+        try {
+            Main.fileWriter.write("\n" + stringWriter.toString() + "\n");
+            Main.fileWriter.flush();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return stringWriter.toString();
     }
 
@@ -26,6 +32,12 @@ public class JsonUtil {
                 .add("code",code)
                 .add("username", Main.client.getUsername())
                 .build());
+        try {
+            Main.fileWriter.write(stringWriter.toString() + "\n");
+            Main.fileWriter.flush();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return stringWriter.toString();
     }
 
@@ -36,6 +48,12 @@ public class JsonUtil {
                 .add("username", Main.client.getUsername())
                 .add("message", message)
                 .build());
+        try {
+            Main.fileWriter.write(stringWriter.toString() + "\n");
+            Main.fileWriter.flush();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return stringWriter.toString();
     }
 
@@ -47,6 +65,12 @@ public class JsonUtil {
                 .add("password", password)
                 .add("port", port)
                 .build());
+        try {
+            Main.fileWriter.write(stringWriter.toString() + "\n");
+            Main.fileWriter.flush();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return stringWriter.toString();
     }
 
@@ -57,6 +81,12 @@ public class JsonUtil {
                 .add("username", username)
                 .add("password", password)
                 .build());
+        try {
+            Main.fileWriter.write(stringWriter.toString() + "\n");
+            Main.fileWriter.flush();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return stringWriter.toString();
     }
 
@@ -65,6 +95,12 @@ public class JsonUtil {
         Json.createWriter(stringWriter).writeObject(Json.createObjectBuilder()
                 .add("code", Codes.LOGOUT)
                 .build());
+        try {
+            Main.fileWriter.write(stringWriter.toString() + "\n");
+            Main.fileWriter.flush();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return stringWriter.toString();
     }
 
@@ -74,6 +110,12 @@ public class JsonUtil {
                 .add("code", Codes.SEARCH_USER)
                 .add("username", username)
                 .build());
+        try {
+            Main.fileWriter.write(stringWriter.toString() + "\n");
+            Main.fileWriter.flush();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return stringWriter.toString();
     }
 }

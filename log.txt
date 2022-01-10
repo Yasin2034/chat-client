@@ -1,0 +1,8 @@
+{"code":"LOGIN","username":"a","password":"1","port":"54468"}
+
+{"code":"HELLO","username":"a","message":"a"}
+{"code":"SEARCH_USER","username":"a"}
+{"code":"CHAT_REQUEST","username":"a"}
+{"code":"OK","username":"a"}
+{"code":"MESSAGE","username":"a","message":"asd"}
+{"code":"MESSAGE","username":"a","message":"asddsaasd"}

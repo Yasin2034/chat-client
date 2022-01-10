@@ -3,6 +3,10 @@ package main;
 import util.JsonUtil;
 
 import javax.swing.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 
 public class Main {
 
@@ -10,8 +14,12 @@ public class Main {
     public static PeerRequest peerRequest;
     public static ServerConnection serverConnection;
     public static JFrame frame;
+    public static File file;
+    public static OutputStreamWriter fileWriter;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        file = new File("log.txt");
+        fileWriter = new OutputStreamWriter(new FileOutputStream(file));
         client = new Client();
         client.start();
         serverConnection = new ServerConnection(client);
